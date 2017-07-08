@@ -14,6 +14,7 @@ class App extends Component {
         <div id="router">
           <SideBar/>
           <Route exact path="/" component={LandingPage}/>
+          <Route exact path="/Home" component={LandingPage}/>
           <Route exact path="/About" component={About}/>
           <Route exact path="/Portfolio" component={Portfolio}/>
           <Route exact path="/Work" component={Work}/>
