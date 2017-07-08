@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import SubPage from '../Components/SubPage'
 
 class About extends Component {
   render() {
     return (
-      <div className="col-md-9 main-section">
-        <h1>About page</h1>
-      </div>
+      <SubPage pageName="About Me">
+        <h1>Lorem Ipsum</h1>
+      </SubPage>
     );
   }
 }

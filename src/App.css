@@ -7,7 +7,6 @@ html, body, #root, #router, #side-bar, .main-section {
   html, body, #root, #router, #side-bar, .main-section {
     width: 100%;
   }
-
 }
 
 #side-bar {
@@ -47,6 +46,7 @@ html, body, #root, #router, #side-bar, .main-section {
 
 .main-section {
   background: #e5e4e1;
+  padding: 0;
 }
 
 .center-vertical-parent {
@@ -99,3 +99,35 @@ html, body, #root, #router, #side-bar, .main-section {
   cursor: pointer;
 }
 
+.page-details {
+  width: 100%;
+  height: 30%;
+  color: white;
+}
+
+.page-name h1 {
+  color: white;
+  font-size: 8vh;
+  text-shadow: 5px 5px 5px #000;
+}
+
+.img-background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;   
+  opacity: 0.9;
+}
+
+.img-background-About {
+  background-image: url('./images/LandingWallpaper.jpg');
+}
+
+/* TODO: change img */
+.img-background-Portfolio {
+  background-image: url('./images/LandingWallpaper.jpg');
+}
+
+/* TODO: change img */
+.img-background-Experience {
+  background-image: url('./images/LandingWallpaper.jpg');
+}

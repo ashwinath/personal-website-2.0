@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import SideBar from './Components/SideBar';
-import About from './Components/About';
-import Portfolio from './Components/Portfolio';
-import Work from './Components/Work';
-import LandingPage from './Components/LandingPage';
+import SideBar from './Pages/SideBar';
+import About from './Pages/About';
+import Portfolio from './Pages/Portfolio';
+import Experience from './Pages/Experience';
+import LandingPage from './Pages/LandingPage';
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
           <Route exact path="/Home" component={LandingPage}/>
           <Route exact path="/About" component={About}/>
           <Route exact path="/Portfolio" component={Portfolio}/>
-          <Route exact path="/Work" component={Work}/>
+          <Route exact path="/Experience" component={Experience}/>
         </div>
       </Router>
     );

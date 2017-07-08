@@ -37,7 +37,7 @@ function Introduction() {
 
 function Links() {
   const blogSite = 'https://blog.ashwinchat.com';
-  const links = ["Home", "About", "Portfolio", "Work"];
+  const links = ["Home", "About", "Portfolio", "Experience"];
   return (
     <div id="links"
       className="middle">

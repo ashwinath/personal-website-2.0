@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import SubPage from '../Components/SubPage'
 
 class Portfolio extends Component {
   render() {
     return (
-      <div className="col-md-9 main-section">
-        <h1>Portfolio</h1>
-      </div>
+      <SubPage pageName="Portfolio">
+        <h1>Lorem Ipsum</h1>
+      </SubPage>
     );
   }
 }
