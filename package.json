@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp public/resume.pdf build/",
     "test": "mocha test",
     "eject": "react-scripts eject",
     "serve": "node server"

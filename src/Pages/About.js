@@ -6,9 +6,39 @@ class About extends Component {
     return (
       <SubPage pageName="About Me">
         <Summary/>
+        <Biography/>
       </SubPage>
     );
   }
+}
+
+function Biography() {
+  return (
+    <div id="biography">
+      <p className="text-right personal-info-name about-biography-text">
+        Ashwin Nath Chatterji
+      </p>
+      <p className="personal-info-work about-biography-text">
+        Software Engineer - DXC Techology
+      </p>
+      <p className="personal-info-education about-biography-text">
+        BBA (Marketing), Nanyang Technological University
+      </p>
+      <p className="about-biography-text pad-bottom">
+        I taught myself to write software and made it my profession. I write enterprise software for a living in Java but I do not restrict my technology stack to only that. I spend most of my free time experimenting with slightly more modern technology such as Redis, Node.js, React.js etc.
+      </p>
+      <div className="text-center">
+        <button onClick={gotoResume}
+          className="btn resume-btn">
+          Download Resume
+        </button>
+      </div>
+    </div>
+  )
+}
+
+function gotoResume() {
+  window.location = "/resume";
 }
 
 function gotoWebsite(event) {
@@ -23,7 +53,7 @@ const icons = {
   },
   nodejs: {
     icon: "devicon-nodejs-plain",
-    desc: "Build highly concurrent apps with Node.",
+    desc: "Build highly concurrent software with Node.",
     website: "https://nodejs.org/en/"
   },
   java: {

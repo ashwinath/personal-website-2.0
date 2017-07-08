@@ -138,13 +138,9 @@ html, body, #root, #router, #side-bar, .main-section {
 .img-background-Experience {
   background-image: url('./images/LandingWallpaper.jpg');
 }
-
-.section-band-dark div {
+.section-band-dark {
+  overflow: auto;
   background: #CFD8DC;
-  padding: 20px 0;
-}
-
-.section-band-light {
   padding: 20px 0;
 }
 
@@ -163,4 +159,44 @@ html, body, #root, #router, #side-bar, .main-section {
 
 .about-summary-desc {
   font-size: 2vh;
+}
+
+#biography {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  overflow: auto;
+}
+#biography h1 {
+  padding-bottom: 20px;
+}
+
+.about-biography-text {
+  font-size: 2.5vh;
+  text-align: justify;
+  padding: 0 10%;
+}
+
+.pad-bottom {
+  padding-bottom: 20px;
+}
+
+.resume-btn {
+  font-size: 2.8vh;
+  padding: 20px 20px;
+  color: white;
+  background: #607D8B;
+}
+
+.personal-info-name {
+  font-size: 3vh;
+}
+
+.personal-info-work {
+  color: #00BCD4;
+  font-size: 2.5vh;
+}
+
+.personal-info-education {
+  font-size: 2vh;
+  font-style: italic;
 }
