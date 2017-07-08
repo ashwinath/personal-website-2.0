@@ -44,7 +44,7 @@ function Links() {
       {links.map(link => {
         return (
           <NavLink
-            id={link}
+            key={link}
             className="link"
             activeClassName="selected"
             to={`/${link}`}>

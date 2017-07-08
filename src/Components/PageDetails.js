@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class PageDetails extends Component {
   render() {
@@ -11,6 +12,10 @@ class PageDetails extends Component {
       </div>
     );
   }
+}
+
+PageDetails.propTypes = {
+  pageName: PropTypes.string
 }
 
 export default PageDetails;

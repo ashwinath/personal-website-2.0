@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PageDetails from '../Components/PageDetails';
+import PropTypes from 'prop-types'
 
 class SubPage extends Component {
   render() {
@@ -10,6 +11,10 @@ class SubPage extends Component {
       </div>
     );
   }
+}
+
+PageDetails.propTypes = {
+  pageName: PropTypes.string
 }
 
 export default SubPage;
