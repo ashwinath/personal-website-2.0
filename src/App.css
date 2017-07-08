@@ -4,43 +4,54 @@ html, body, #root, #router, #side-bar, .main-section {
 }
 
 #side-bar {
-  color: #ECEFF1;
-  /*background: #607D8B;*/
-  background: #00838F;
   padding-top: 20px;
+  text-align: center;
+}
+
+#introduction {
+  position: absolute;
+  top: 0%;
+}
+
+#links {
+  position: absolute;
+  top: 30%;
+}
+
+#social {
+  position: absolute;
+  top: 85%;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+#introduction, #links {
+  right: 20px;
 }
 
 .main-section {
   padding-left: 20px;
+  background: #e5e4e1;
 }
 
 #brand {
   font-family: 'Righteous', cursive;
   font-size: 4em;
-  text-align: center;
+  text-decoration: underline;
 }
 
 #description {
   font-size: 1.5em;
   font-style: italic;
   padding-bottom: 30px;
-  text-align: center;
 }
 
 .link {
   display: inline;
   color: inherit;
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
 }
 
-.blog {
-  height: 100%;
-  padding: 0;
-  overflow-y: scroll;
-   -webkit-overflow-scrolling: touch;
-}
-
-iframe {
-  border: 0;
-}
