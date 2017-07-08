@@ -6,7 +6,7 @@ class SideBar extends Component {
     const blogSite = 'https://blog.ashwinchat.com';
     const links = ["About", "Portfolio", "Work"];
     return (
-      <div id="side-bar" className="col-md-2">
+      <div id="side-bar" className="col-md-3">
         <div id="introduction">
           <p id="brand">Ashwin</p>
           <p id="description">Self Taught Developer</p>

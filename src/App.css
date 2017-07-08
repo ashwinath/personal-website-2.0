@@ -27,8 +27,17 @@ html, body, #root, #router, #side-bar, .main-section {
   margin-right: auto; 
 }
 
+.selected {
+  text-decoration: underline;
+  color: red;
+}
+
+.selected a {
+  text-decoration: none;
+}
+
 #introduction, #links {
-  right: 20px;
+  right: 15%;
 }
 
 .main-section {
