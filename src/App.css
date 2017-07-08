@@ -7,6 +7,12 @@ html, body, #root, #router, #side-bar, .main-section {
   html, body, #root, #router, #side-bar, .main-section {
     width: 100%;
   }
+  .main-section {
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 768px) {
 }
 
 #side-bar {
@@ -133,10 +139,28 @@ html, body, #root, #router, #side-bar, .main-section {
   background-image: url('./images/LandingWallpaper.jpg');
 }
 
-.section-band-dark {
+.section-band-dark div {
   background: #CFD8DC;
+  padding: 20px 0;
 }
 
-.band {
+.section-band-light {
+  padding: 20px 0;
+}
+
+.icon {
+  font-size: 15vh;
+}
+
+.icon:hover {
+  font-size: 15vh;
+  cursor: pointer;
+}
+
+.icon-pad {
   padding: 20px 20px;
+}
+
+.about-summary-desc {
+  font-size: 2vh;
 }
