@@ -45,6 +45,7 @@ html, body, #root, #router, #side-bar, .main-section {
 }
 
 .main-section {
+  overflow: auto;
   background: #e5e4e1;
   padding: 0;
 }
