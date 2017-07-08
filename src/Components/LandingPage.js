@@ -3,8 +3,12 @@ import React, { Component } from 'react';
 class LandingPage extends Component {
   render() {
     return (
-      <div className="col-md-9 main-section">
-        <h1>Landing Page</h1>
+      <div id="landing" 
+        className="col-md-9 main-section center-vertical-parent">
+        <div id="landing-content" className="center-vertical">
+          <h1>I'M ASHWIN, DEVEVELOPER.</h1>
+          <p></p>
+        </div>
       </div>
     );
   }

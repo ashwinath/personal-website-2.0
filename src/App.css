@@ -39,8 +39,32 @@ html, body, #root, #router, #side-bar, .main-section {
 }
 
 .main-section {
-  padding-left: 20px;
   background: #e5e4e1;
+}
+
+.center-vertical-parent {
+  display: table;
+  overflow: hidden;
+}
+
+.center-vertical {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#landing {
+  padding-left: 10%;
+  background-image: url('./images/LandingWallpaper.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;   
+  opacity: 0.7;
+}
+
+#landing-content h1 {
+  color: white;
+  font-size: 5em;
+  text-shadow: 5px 5px 5px #000;
 }
 
 #brand {
