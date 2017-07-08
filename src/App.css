@@ -4,13 +4,12 @@ html, body, #root, #router, #side-bar, .main-section {
 }
 
 #side-bar {
-  padding-top: 20px;
   text-align: center;
 }
 
 #introduction {
   position: absolute;
-  top: 0%;
+  top: 5%;
 }
 
 #links {
@@ -21,6 +20,9 @@ html, body, #root, #router, #side-bar, .main-section {
 #social {
   position: absolute;
   top: 85%;
+}
+
+.middle {
   left: 0; 
   right: 0; 
   margin-left: auto; 
@@ -33,11 +35,7 @@ html, body, #root, #router, #side-bar, .main-section {
 }
 
 .selected a {
-  text-decoration: none;
-}
-
-#introduction, #links {
-  right: 15%;
+  text-decoration: none !important;
 }
 
 .main-section {
@@ -64,3 +62,7 @@ html, body, #root, #router, #side-bar, .main-section {
   text-align: center;
 }
 
+.social-icon {
+  padding: 10px 10px;
+  cursor: pointer;
+}
