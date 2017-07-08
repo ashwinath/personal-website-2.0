@@ -7,7 +7,6 @@ class LandingPage extends Component {
         className="col-md-9 main-section center-vertical-parent">
         <div id="landing-content" className="center-vertical">
           <h1>I'M ASHWIN, DEVEVELOPER.</h1>
-          <p></p>
         </div>
       </div>
     );
