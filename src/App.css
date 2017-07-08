@@ -8,9 +8,6 @@ html, body, #root, #router, #side-bar, .main-section {
     width: 100%;
   }
 
-  #landing h1 {
-    text-align: center;
-  }
 }
 
 #side-bar {
@@ -63,6 +60,7 @@ html, body, #root, #router, #side-bar, .main-section {
 }
 
 #landing {
+  text-align: center;
   padding-left: 20px;
   background-image: url('./images/LandingWallpaper.jpg');
   background-size: cover;
@@ -73,7 +71,7 @@ html, body, #root, #router, #side-bar, .main-section {
 
 #landing-content h1 {
   color: white;
-  font-size: 4em;
+  font-size: 8vh;
   text-shadow: 5px 5px 5px #000;
 }
 
