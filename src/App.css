@@ -46,7 +46,7 @@ html, body, #root, #router, #side-bar, .main-section {
 
 .main-section {
   overflow: auto;
-  background: #e5e4e1;
+  background: #ECEFF1;
   padding: 0;
 }
 
@@ -131,4 +131,12 @@ html, body, #root, #router, #side-bar, .main-section {
 /* TODO: change img */
 .img-background-Experience {
   background-image: url('./images/LandingWallpaper.jpg');
+}
+
+.section-band-dark {
+  background: #CFD8DC;
+}
+
+.band {
+  padding: 20px 20px;
 }
