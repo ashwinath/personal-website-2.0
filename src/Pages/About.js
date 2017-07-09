@@ -25,7 +25,7 @@ function Biography() {
         BBA (Marketing), Nanyang Technological University
       </p>
       <p className="about-biography-text pad-bottom">
-        I taught myself to write software and made it my profession. I write enterprise software for a living in Java but I do not restrict my technology stack to only that. I spend most of my free time experimenting with slightly more modern technology such as Redis, Node.js, React.js etc.
+        I taught myself to write software and made it my profession. I write enterprise software for a living using Java but I do not restrict my technology stack to only that. I spend most of my free time experimenting with slightly more modern technology such as Redis, Node.js, React.js etc.
       </p>
       <div className="text-center">
         <button onClick={gotoResume}
