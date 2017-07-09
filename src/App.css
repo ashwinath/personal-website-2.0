@@ -7,12 +7,16 @@ html, body, #root, #router, #side-bar, .main-section {
   html, body, #root, #router, #side-bar, .main-section {
     width: 100%;
   }
+
   .main-section {
     overflow: visible;
   }
-}
 
-@media screen and (max-width: 768px) {
+  .work-exp-desc {
+    overflow: visible;
+    text-align: center;
+    width: 100%;
+  }
 }
 
 #side-bar {
@@ -199,4 +203,28 @@ html, body, #root, #router, #side-bar, .main-section {
 .personal-info-education {
   font-size: 2vh;
   font-style: italic;
+}
+
+.work-exp {
+  overflow: auto;
+  padding: 30px 10%;
+}
+
+.work-img {
+  border: 0;
+  background-color: inherit;
+  max-height: 140px;
+}
+
+.work-company {
+  font-size: 3.5vh;
+}
+
+.work-title {
+  color: #00BCD4;
+  font-size: 3vh;
+}
+
+.work-duration {
+  font-size: 2.5vh;
 }
