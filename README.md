@@ -12,5 +12,5 @@ Revamp of the old website since now I have a better understanding of web-dev and
 * 404 Page
 * Contact screen
 * Mobile friendly navigation bar
-* Resume page not working in production.
+* Build script for fast deployment
 * Unit test that builds react app fails.
