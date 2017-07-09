@@ -226,3 +226,39 @@ html, body, #root, #router, #side-bar, .main-section {
 .work-duration {
   font-size: 2.5vh;
 }
+
+.portfolio-img {
+  border: 0;
+  background-color: inherit;
+}
+
+.portfolio-item {
+  margin: 0 0 50px;
+  padding-top: 20px;
+}
+
+.portfolio-pic-container, .portfolio-caption {
+  text-align: center;
+  background-color: #fff;
+}
+
+.portfolio-pic-container {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.portfolio-link img {
+  margin: 0 auto;
+  min-height: 256px;
+}
+
+.portfolio-caption {
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.portfolio-caption h4, .services-title {
+  font-size: 1.2em;
+  font-weight: 700;
+}
