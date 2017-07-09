@@ -40,7 +40,7 @@ function WorkExperience(props) {
   return (
     <div key={workExperience.company}
       className={`work-exp ${workExperience.className}`}>
-      <div className="col-md-3">
+      <div className="col-md-3 text-center">
         <img src={workExperience.picture}
           className="img-thumbnail work-img"/>
       </div>
