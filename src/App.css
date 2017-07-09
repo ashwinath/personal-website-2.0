@@ -130,17 +130,15 @@ html, body, #root, #router, #side-bar, .main-section {
 }
 
 .img-background-About {
-  background-image: url('./images/LandingWallpaper.jpg');
+  background-image: url('./images/About.jpeg');
 }
 
-/* TODO: change img */
 .img-background-Portfolio {
-  background-image: url('./images/LandingWallpaper.jpg');
+  background-image: url('./images/Portfolio.jpeg');
 }
 
-/* TODO: change img */
 .img-background-Experience {
-  background-image: url('./images/LandingWallpaper.jpg');
+  background-image: url('./images/Experience.jpeg');
 }
 .section-band-dark {
   overflow: auto;
