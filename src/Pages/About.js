@@ -38,7 +38,8 @@ function Biography() {
 }
 
 function gotoResume() {
-  window.location = "/resume";
+  const resumeLink = encodeURI('https://drive.google.com/file/d/0BxZd-ZB1I2mSNmVyRGZxTEZqNms/view?usp=sharing');
+  window.location = resumeLink;
 }
 
 function gotoWebsite(event) {
