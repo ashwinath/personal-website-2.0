@@ -52,7 +52,7 @@ function Project(props) {
       <div className="portfolio-item text-center">
         <div className="portfolio-pic-container">
           <a className="portfolio-link" href={project.github}>
-            <img className="img-responsive" src={project.picture}/>
+            <img className="img-responsive" src={project.picture} alt={project.title}/>
           </a>
         </div>
         <div className="portfolio-caption">

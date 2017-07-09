@@ -1,7 +1,9 @@
 machine:
   node:
     version: 8.1.2
-  pre:
+
+compile:
+  override:
     - yarn build
 
 dependencies:

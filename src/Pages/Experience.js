@@ -42,6 +42,7 @@ function WorkExperience(props) {
       className={`work-exp ${workExperience.className}`}>
       <div className="col-md-3 text-center">
         <img src={workExperience.picture}
+          alt={workExperience.company}
           className="img-thumbnail work-img"/>
       </div>
       <div className="col-md-9">
