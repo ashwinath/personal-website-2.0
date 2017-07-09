@@ -30,7 +30,7 @@ function Introduction() {
     <div id="introduction"
       className="middle">
       <p id="brand">Ashwin</p>
-      <p id="description">Autodidact</p>
+      <p id="description">Software Engineer</p>
     </div>
   )
 }
