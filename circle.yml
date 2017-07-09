@@ -1,6 +1,8 @@
 machine:
   node:
-    version: 6.9.0
+    version: 8.1.2
+  pre:
+    - yarn build
 
 dependencies:
   override:
