@@ -12,6 +12,4 @@ Revamp of the old website since now I have a better understanding of web-dev and
 ## Todo list
 * 404 Page
 * Contact screen
-* Mobile friendly navigation bar
 * Build script for fast deployment
-* Unit test that builds react app fails.

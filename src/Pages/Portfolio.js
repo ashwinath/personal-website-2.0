@@ -29,7 +29,7 @@ class Portfolio extends Component {
       },
       {
         picture: PopularMovies,
-        title: "Previous Website",
+        title: "Popular Movies",
         github: "https://github.com/ashwinath/Android_Popular_Movies_App",
         desc: "My first attempt at programming and Android dev."
       },
@@ -38,7 +38,7 @@ class Portfolio extends Component {
     return (
       <SubPage pageName="Portfolio">
         {projects.map(project => {
-          return <Project project={project}/>
+          return <Project key={project.title} project={project}/>
         })}
       </SubPage>
     );

@@ -92,6 +92,15 @@ html, body, #root, #router, #side-bar, .main-section {
   text-decoration: underline;
 }
 
+#mobile-brand {
+  font-family: 'Righteous', cursive;
+  text-decoration: underline;
+}
+
+#mobile-nav {
+  margin: 0;
+}
+
 #description {
   font-size: 1.5em;
   font-style: italic;

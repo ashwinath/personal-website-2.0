@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 class SubPage extends Component {
   render() {
     return (
-      <div className="col-md-9 main-section">
+      <div className="col-xs-9 main-section">
         <PageDetails pageName={this.props.pageName}/>
         {this.props.children}
       </div>

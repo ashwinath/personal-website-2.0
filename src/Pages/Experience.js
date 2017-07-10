@@ -26,7 +26,7 @@ class Experience extends Component {
       <SubPage pageName="Experience">
         {workExperiences.map(workExperience => {
           return (
-            <WorkExperience workExperience={workExperience}/>
+            <WorkExperience key={workExperience.company} workExperience={workExperience}/>
           )
 
         })}
