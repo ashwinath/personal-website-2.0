@@ -53,7 +53,7 @@ const links = ["Home", "About", "Portfolio", "Experience"];
 
 function MobileNavBar(props) {
   return (
-    <nav id="mobile-nav" className="navbar navbar-default">
+    <nav id="mobile-nav" className="navbar navbar-default navbar-fixed-top">
       <div className="navbar-header">
         <button type="button"
           className="navbar-toggle collapsed"

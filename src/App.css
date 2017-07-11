@@ -8,6 +8,10 @@ html, body, #root, #router, #side-bar, .main-section {
     width: 100%;
   }
 
+  body {
+    padding-top: 50px;
+  }
+
   .main-section {
     overflow: visible;
   }
