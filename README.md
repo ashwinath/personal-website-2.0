@@ -13,3 +13,4 @@ Revamp of the old website since now I have a better understanding of web-dev and
 * 404 Page
 * Contact screen
 * Build script for fast deployment
+* Make nav bar unscrollable.
