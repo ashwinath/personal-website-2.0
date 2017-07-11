@@ -15,6 +15,6 @@ before_install:
 deploy:
   provider: script
   skip_cleanup: true
-  script: . scripts/deploy.sh
+  script: bash $TRAVIS_BUILD_DIR/scripts/deploy.sh
   on:
     branch: master
