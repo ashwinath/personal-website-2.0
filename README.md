@@ -10,5 +10,4 @@ Revamp of the old website since now I have a better understanding of web-dev and
 * Express.js
 
 ## Todo list
-* 404 Page
 * Contact screen
