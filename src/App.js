@@ -6,6 +6,7 @@ import About from './Pages/About';
 import Portfolio from './Pages/Portfolio';
 import Experience from './Pages/Experience';
 import LandingPage from './Pages/LandingPage';
+import NotFound from './Pages/NotFound';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/About" component={About}/>
           <Route exact path="/Portfolio" component={Portfolio}/>
           <Route exact path="/Experience" component={Experience}/>
+          <Route exact path="*" component={NotFound}/>
         </div>
       </Router>
     );
