@@ -13,5 +13,6 @@ Server side deployment has been fully automated and there is no need for human i
 * React.js
 * Express.js
 
-## Todo list
-* Contact screen
+# Todo
+* Interests
+* More description on the experience section.
