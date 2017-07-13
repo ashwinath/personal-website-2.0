@@ -1,31 +1,33 @@
 language: node_js
 node_js: 8.1.2
-
 branches:
   only:
-    - master
-    - dev
-
+  - master
+  - dev
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_b8f58f619ede_key -iv $encrypted_b8f58f619ede_iv -in id_rsa.enc -out /tmp/id_rsa -d
+- openssl aes-256-cbc -K $encrypted_b8f58f619ede_key -iv $encrypted_b8f58f619ede_iv
+  -in id_rsa.enc -out /tmp/id_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/id_rsa
 - ssh-add /tmp/id_rsa
-
 before_script:
 - yarn build
-
 before_install:
 - openssl aes-256-cbc -K $encrypted_b8f58f619ede_key -iv $encrypted_b8f58f619ede_iv
   -in id_rsa.enc -out id_rsa -d
-
-deploy:
-  provider: script
-  skip_cleanup: true
-  script: bash scripts/deploy.sh
-  on:
-    branch: master
-
 addons:
   ssh_known_hosts:
-    - 128.199.203.199
+  - 128.199.203.199
+deploy:
+  - provider: heroku
+    api_key:
+      secure: hkk600XLpa41POj5P+kxQsxZyZFWU3PZEI2kw1RKSXcq4r86AknPs3B3HFGYUnL97HzttAZoKXo+ge2GOvBMO7jUTWVNgTjec0tRhoa4CM/p8ULy0qR5lWhgc0PK85cclZOIwJlVefQj8PxxuqKL5TKJnqDtDV2Vn2DpTSt7ZazVZLWNaoql6+G+JUTyC/UQ2OTmqzKZ9UYSTEsbApA27CCas3SVQ8as1trmb8itrzSF5leFeCkjhR8vGCXiJuCiVml+gdFyGVmoctfPjdqxz0QEbM/fcDUwLXK3KuoZ7kqshFj8mjJQsLo2qt3fw8YiXvCo9Z3YYI9abgF0dMGFJ3tbnrHHVE7DESbyPbPFmtsTsMqfz8wxRPaxMfv2k7MxbW+jibNxAotJGX8u08wSyTfNtoYUTEZzr5n2cOctzzj6EC09v/6floH+vqrrTEgDFQ9aH36jwP/RohhPXMCuV01bdvzA0U/OTAz8Vtd+CloVJAY0CTS8cetINdbFp6rDXRvofznfWLzF22jKiD55u/1LWAaUfQhel4oKzQa7TAR5w3cLPhk/MTf9IAq58JtSFo1rzHSxpOlF93SxdQfr8qhVaX1fDOumGJft2Zn5/qEFqUhC5/MjuWg4nnB1UWPXLVaNkxVhbrdQx2I0vRmS7+0cLSMAqTHoSves1DAo264=
+    app: personal-website-two
+    on:
+      repo: ashwinath/personal-website-2.0
+      branch: dev
+  - provider: script
+    skip_cleanup: true
+    script: bash scripts/deploy.sh
+    on:
+      branch: master
