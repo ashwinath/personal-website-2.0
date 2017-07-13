@@ -19,8 +19,8 @@ addons:
   ssh_known_hosts:
   - 128.199.203.199
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: bash scripts/deploy.sh
-    on:
-      branch: master
+  provider: script
+  skip_cleanup: true
+  script: bash scripts/deploy.sh
+  on:
+    branch: master
