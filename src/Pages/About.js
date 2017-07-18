@@ -38,7 +38,7 @@ function Biography() {
 }
 
 function gotoResume() {
-  const resumeLink = encodeURI('https://drive.google.com/open?id=0BxZd-ZB1I2mSUS0yWlJxQURmMFE');
+  const resumeLink = encodeURI('https://drive.google.com/open?id=0BxZd-ZB1I2mSRkxQLVdseER3XzQ');
   window.location = resumeLink;
 }
 
