@@ -87,7 +87,7 @@ html, body, #root, #router, #side-bar, .main-section {
 #landing-content h1 {
   color: #ECEFF1;
   font-size: 8vh;
-  text-shadow: 10px 10px 10px #000;
+  text-shadow: 4px 4px 4px #000;
 }
 
 #brand {
