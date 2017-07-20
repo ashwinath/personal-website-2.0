@@ -76,18 +76,18 @@ html, body, #root, #router, #side-bar, .main-section {
 
 #landing {
   text-align: center;
-  padding-left: 20px;
   background-image: url('./images/LandingWallpaper.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;   
   opacity: 0.9;
+  text-align: center;
 }
 
 #landing-content h1 {
-  color: white;
+  color: #ECEFF1;
   font-size: 8vh;
-  text-shadow: 5px 5px 5px #000;
+  text-shadow: 10px 10px 10px #000;
 }
 
 #brand {
@@ -130,7 +130,7 @@ html, body, #root, #router, #side-bar, .main-section {
 }
 
 .page-name h1 {
-  color: white;
+  color: #ECEFF1;
   font-size: 8vh;
   text-shadow: 5px 5px 5px #000;
 }
@@ -139,20 +139,10 @@ html, body, #root, #router, #side-bar, .main-section {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;   
+  background-image: url('./images/LandingWallpaper.jpg');
   opacity: 0.9;
 }
 
-.img-background-About {
-  background-image: url('./images/About.jpeg');
-}
-
-.img-background-Portfolio {
-  background-image: url('./images/Portfolio.jpeg');
-}
-
-.img-background-Experience {
-  background-image: url('./images/Experience.jpeg');
-}
 .section-band-dark {
   overflow: auto;
   background: #CFD8DC;
@@ -181,6 +171,7 @@ html, body, #root, #router, #side-bar, .main-section {
   padding-bottom: 40px;
   overflow: auto;
 }
+
 #biography h1 {
   padding-bottom: 20px;
 }
