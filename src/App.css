@@ -266,3 +266,38 @@ html, body, #root, #router, #side-bar, .main-section {
   font-size: 1.2em;
   font-weight: 700;
 }
+
+.contact-form {
+  text-align: center;
+  overflow: auto;
+  padding-top: 50px;
+}
+
+input.form-control, text-area.form-control {
+  padding: 20px;
+}
+
+.form-group {
+  padding: 20 0;
+}
+
+.form-control {
+  font-size: 1.2em;
+  font-weight: 700;
+  height: auto;
+}
+
+textarea.form-control {
+  height: 225px;
+}
+
+.submit-btn, .submit-btn:focus {
+  color: #ECEFF1;
+  background: #263238;
+  outline: none;
+}
+
+.submit-btn:hover {
+  color: #4FC3F7;
+  outline: none;
+}

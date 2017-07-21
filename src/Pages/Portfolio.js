@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SubPage from '../Components/SubPage'
+import SubPage from '../Components/SubPage';
 import PropTypes from 'prop-types';
 import Website2 from '../images/Website2.png';
 import Website from '../images/Website.png';
