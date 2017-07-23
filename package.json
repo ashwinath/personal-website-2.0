@@ -10,6 +10,7 @@
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.1",
     "react-scripts": "1.0.10",
+    "validator": "^8.0.0",
     "winston": "^2.3.1"
   },
   "scripts": {
