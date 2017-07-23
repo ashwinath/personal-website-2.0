@@ -4,6 +4,9 @@ import isEmail from 'validator/lib/isEmail';
 import isNumeric from 'validator/lib/isNumeric';
 import axios from 'axios';
 
+const FAILED = 'failed';
+const SUCCESS = 'success';
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +20,9 @@ class Contact extends Component {
       phoneValid: true,
       content: "",
       contentValid: true,
+      requestSent: false,
       submitPressed: false,
+      submitStatus: 'not sent',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,18 +48,47 @@ class Contact extends Component {
     let valid = this.checkErrors();
 
     if (valid) {
-      axios.post('/Contact',
-        {
-          contactEnvelope: {
-            name: this.state.name,
-            email: this.state.email,
-            phone: this.state.phone,
-            message: this.state.content
-          }
-        })
-        .then(response => {
-          console.log(response);
+
+      this.setState(() => {
+        let newState = this.state;
+        newState.requestSent = true;
+        return newState;
+      });
+
+      axios.post('/Contact', {
+        contactEnvelope: {
+          name: this.state.name,
+          email: this.state.email,
+          phone: this.state.phone,
+          message: this.state.content
+        }
+      })
+      .then(response => {
+        let result = response.data.result;
+        let newState = this.state;
+
+        if (result === SUCCESS) {
+          this.setState(() => {
+            newState.submitStatus = SUCCESS;
+            newState.requestSent = false;
+            return newState;
+          });
+        } else {
+          this.setState(() => {
+            newState.submitStatus = FAILED;
+            newState.requestSent = false;
+            return newState;
+          });
+        }
+      })
+      .catch(error => {
+        this.setState(() => {
+          let newState = this.state;
+          newState.submitStatus = FAILED;
+            newState.requestSent = false;
+          return newState;
         });
+      });
     } else {
       this.setState(() => {
         let newState = this.state;
@@ -109,12 +143,42 @@ class Contact extends Component {
             && <ErrorMessages state={this.state}/>}
           {this.checkErrors()
             && <SuccessMessage/>}
+          {this.checkErrors() 
+          && (this.state.submitStatus === FAILED 
+              || this.state.submitStatus === SUCCESS)
+          && <SubmitStatus 
+            submitStatus={this.state.submitStatus}/>}
           <button type="submit" 
             value="submit"
-            className="btn btn-lg submit-btn">
+            className="btn btn-lg submit-btn"
+            disabled={this.state.requestSent || this.state.submitStatus === SUCCESS}>
             Send me a Telegram!</button>
           </form>
       </SubPage>
+    );
+  }
+}
+
+function SubmitStatus(props) {
+  if (props.submitStatus === SUCCESS) {
+    return (
+      <div className="col-md-12">
+        <div className="alert alert-success alerts">
+          <p id="alert-sign">
+            <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> Your message was delivered!
+          </p>
+        </div>
+      </div>
+    );
+  } else if (props.submitStatus === FAILED) {
+    return (
+      <div className="col-md-12">
+        <div className="alert alert-danger alerts">
+          <p id="alert-sign">
+            <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> Oh No! Something went wrong. Please send an email to ashwinath@hotmail.com
+          </p>
+        </div>
+      </div>
     );
   }
 }
