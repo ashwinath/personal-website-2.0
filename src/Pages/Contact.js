@@ -93,6 +93,8 @@ class Contact extends Component {
           {!this.checkErrors()
             && this.state.submitPressed
             && <ErrorMessages state={this.state}/>}
+          {this.checkErrors()
+            && <SuccessMessage/>}
           <button type="submit" 
             value="submit"
             className="btn btn-lg submit-btn">
@@ -101,6 +103,18 @@ class Contact extends Component {
       </SubPage>
     );
   }
+}
+
+function SuccessMessage() {
+  return (
+    <div className="col-md-12">
+      <div className="alert alert-success alerts">
+        <p id="alert-sign">
+          <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> Your message is ready to go!
+        </p>
+      </div>
+    </div>
+  )
 }
 
 function ErrorMessages(props) {
@@ -115,8 +129,10 @@ function ErrorMessages(props) {
     contentValid } = props.state;
   return (
     <div className="col-md-12">
-      <div className="alert alert-danger warnings">
-        <p id="warning-sign"><i className="fa fa-exclamation-triangle" aria-hidden="true"></i> Validation Failed!</p>
+      <div className="alert alert-danger alerts">
+        <p id="alert-sign">
+          <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> I need more details about you!
+        </p>
         {(!nameValid || !name) && <p>I need to know who you are!</p>}
         {(!emailValid || !email) && <p>I need a valid email to know whom to reply to!</p>}
         {(!phoneValid || phone) && <p>I can't call you if you don't provide a valid phone number!</p>}

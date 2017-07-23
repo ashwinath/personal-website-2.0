@@ -307,12 +307,12 @@ textarea.form-control {
   border-color: #a94442;
 }
 
-.warnings p {
+.alerts p {
   font-size: 1.2em;
   text-align: left;
 }
 
-#warning-sign {
+#alert-sign {
   font-size: 1.4em;
   font-weight: 700;
 }
