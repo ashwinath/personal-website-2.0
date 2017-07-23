@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SubPage from '../Components/SubPage';
 import isEmail from 'validator/lib/isEmail';
 import isNumeric from 'validator/lib/isNumeric';
+import axios from 'axios';
 
 class Contact extends Component {
   constructor(props) {
@@ -41,13 +42,26 @@ class Contact extends Component {
     // Final check, in case the user did not touch the keys
     let valid = this.checkErrors();
 
-    // TODO: handle post
-    console.log(`Verification result was ${valid}`);
-    this.setState(() => {
-      let newState = this.state;
-      newState.submitPressed = true;
-      return newState;
-    })
+    if (valid) {
+      axios.post('/Contact',
+        {
+          contactEnvelope: {
+            name: this.state.name,
+            email: this.state.email,
+            phone: this.state.phone,
+            message: this.state.content
+          }
+        })
+        .then(response => {
+          console.log(response);
+        });
+    } else {
+      this.setState(() => {
+        let newState = this.state;
+        newState.submitPressed = true;
+        return newState;
+      });
+    }
   }
 
   validate(name, value) {
