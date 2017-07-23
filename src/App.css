@@ -62,6 +62,7 @@ html, body, #root, #router, #side-bar, .main-section {
   overflow: auto;
   background: #ECEFF1;
   padding: 0;
+  padding-bottom: 40px;
 }
 
 .center-vertical-parent {
@@ -264,5 +265,55 @@ html, body, #root, #router, #side-bar, .main-section {
 
 .portfolio-caption h4, .services-title {
   font-size: 1.2em;
+  font-weight: 700;
+}
+
+.contact-form {
+  text-align: center;
+  overflow: auto;
+  padding-top: 50px;
+}
+
+input.form-control, text-area.form-control {
+  padding: 20px;
+}
+
+.form-group {
+  padding: 0 0;
+}
+
+.form-control {
+  font-size: 1.2em;
+  font-weight: 700;
+  height: auto;
+  border-width: 3px;
+}
+
+textarea.form-control {
+  height: 237px;
+}
+
+.submit-btn, .submit-btn:focus {
+  color: #ECEFF1;
+  background: #263238;
+  outline: none;
+}
+
+.submit-btn:hover {
+  color: #4FC3F7;
+  outline: none;
+}
+
+.error {
+  border-color: #a94442;
+}
+
+.alerts p {
+  font-size: 1.2em;
+  text-align: left;
+}
+
+#alert-sign {
+  font-size: 1.4em;
   font-weight: 700;
 }

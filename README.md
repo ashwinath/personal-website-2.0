@@ -14,6 +14,12 @@ Server side deployment has been fully automated and there is no need for human i
 * Express.js
 
 # Todo
+* Contact Form
 * Interests
 * My toolset
 * More description on the experience section.
+
+# Todo Contact form
+* Field Validation.
+* Field Validation Feedback.
+* Backend to send email using SMTP
