@@ -317,3 +317,7 @@ textarea.form-control {
   font-size: 1.4em;
   font-weight: 700;
 }
+
+#video-player {
+  overflow: auto;
+}

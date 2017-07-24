@@ -49,7 +49,14 @@ class SideBar extends Component {
 }
 
 const blogSite = 'https://blog.ashwinchat.com';
-const links = ["Home", "About", "Portfolio", "Experience", "Contact"];
+const links = [
+  "Home",
+  "About",
+  "Portfolio",
+  "Experience",
+  "Contact",
+  "Workflow"
+];
 
 function MobileNavBar(props) {
   return (
