@@ -62,7 +62,7 @@ html, body, #root, #router, #side-bar, .main-section {
   overflow: auto;
   background: #ECEFF1;
   padding: 0;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .center-vertical-parent {
@@ -283,14 +283,14 @@ input.form-control, text-area.form-control {
 }
 
 .form-control {
-  font-size: 1.2em;
+  font-size: 1.6em;
   font-weight: 700;
   height: auto;
   border-width: 3px;
 }
 
 textarea.form-control {
-  height: 237px;
+  height: 261px;
 }
 
 .submit-btn, .submit-btn:focus {
