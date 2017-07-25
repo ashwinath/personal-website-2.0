@@ -14,8 +14,6 @@ class SideBar extends Component {
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
 
-  // make sure to remove the listener
-  // when the component is not mounted anymore
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowSizeChange);
   }
@@ -49,7 +47,14 @@ class SideBar extends Component {
 }
 
 const blogSite = 'https://blog.ashwinchat.com';
-const links = ["Home", "About", "Portfolio", "Experience", "Contact"];
+const links = [
+  "Home",
+  "About",
+  "Portfolio",
+  "Experience",
+  "Workflow",
+  "Contact"
+];
 
 function MobileNavBar(props) {
   return (

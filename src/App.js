@@ -7,6 +7,7 @@ import Portfolio from './Pages/Portfolio';
 import Experience from './Pages/Experience';
 import LandingPage from './Pages/LandingPage';
 import Contact from './Pages/Contact';
+import Workflow from './Pages/Workflow';
 import NotFound from './Pages/NotFound';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route exact path="/Portfolio" component={Portfolio}/>
             <Route exact path="/Experience" component={Experience}/>
             <Route exact path="/Contact" component={Contact}/>
+            <Route exact path="/Workflow" component={Workflow}/>
             <Route component={NotFound}/>
           </Switch>
         </div>

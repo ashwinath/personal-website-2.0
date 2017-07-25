@@ -18,6 +18,11 @@ app.use(bodyParser.json());
 // Serve static react files
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
+// Send workflow file
+app.get('/workflowvideo', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'build', 'workflow-webm.webm'));
+})
+
 // Let react do the job
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));

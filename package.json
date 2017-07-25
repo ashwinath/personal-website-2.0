@@ -11,6 +11,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-player": "^0.19.1",
     "react-router-dom": "^4.1.1",
     "react-scripts": "1.0.10",
     "validator": "^8.0.0",
@@ -18,10 +19,10 @@
   },
   "scripts": {
     "serve": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp workflow-webm.webm build/",
     "test": "mocha test",
     "eject": "react-scripts eject",
-    "start": "react-scripts build && node server"
+    "start": "react-scripts build && cp workflow-webm.webm build/ && node server"
   },
   "devDependencies": {
     "chai": "^4.0.2",

@@ -13,8 +13,13 @@ Server side deployment has been fully automated and there is no need for human i
 * React.js
 * Express.js
 
-# Todo
-* Investigate why server always delivers old content instead of new.
+## Todo
 * Interests
 * My toolset
 * More description on the experience section.
+
+## Todo: workflow
+
+Basic skeleton done.
+
+* Dyanmic scaling of video must be done.
