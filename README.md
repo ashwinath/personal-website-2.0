@@ -17,9 +17,3 @@ Server side deployment has been fully automated and there is no need for human i
 * Interests
 * My toolset
 * More description on the experience section.
-
-## Todo: workflow
-
-Basic skeleton done.
-
-* Dyanmic scaling of video must be done.
