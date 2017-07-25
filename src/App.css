@@ -320,4 +320,6 @@ textarea.form-control {
 
 #video-player {
   overflow: auto;
+  padding-top: 20px;
+  padding-left: 0;
 }
