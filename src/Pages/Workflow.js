@@ -17,7 +17,6 @@ class Workflow extends Component {
     window.removeEventListener('resize', this.resizeListener);
   }
 
-  // TODO: do the calculation here
   resizeListener(event) {
     this.setState(() => {
       return calculateDimensions();
