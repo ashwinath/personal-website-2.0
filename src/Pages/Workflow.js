@@ -40,17 +40,16 @@ class Workflow extends Component {
 }
 
 function calculateDimensions() {
-    let windowWidth, windowHeight;
+    let windowWidth;
     if (window.innerWidth > 768) {
       windowWidth = window.innerWidth * 0.625;
-      windowHeight = windowWidth / 1440 * 900;
     } else {
       windowWidth = window.innerWidth * 10/12;
-      windowHeight = windowWidth / 1440 * 900;
     }
+    let windowHeight = windowWidth * 0.625
 
     return {
-      windowWidth: windowWidth,
+      windowWidth: windowWidth - 10,
       windowHeight: windowHeight
     };
   }
