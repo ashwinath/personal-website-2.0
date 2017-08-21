@@ -6,7 +6,6 @@ class Workflow extends Component {
   constructor(props) {
     super(props);
     this.state = calculateDimensions();
-    this.resizeListener = this.resizeListener.bind(this);
   }
 
   componentDidMount() {
@@ -17,11 +16,7 @@ class Workflow extends Component {
     window.removeEventListener('resize', this.resizeListener);
   }
 
-  resizeListener(event) {
-    this.setState(() => {
-      return calculateDimensions();
-    });
-  }
+  resizeListener = event => this.setState(() => calculateDimensions());
 
   render() {
     return (
@@ -39,20 +34,19 @@ class Workflow extends Component {
   }
 }
 
-function calculateDimensions() {
-    let windowWidth;
-    if (window.innerWidth > 768) {
-      windowWidth = window.innerWidth * 0.625;
-    } else {
-      windowWidth = window.innerWidth * 10/12;
-    }
-    let windowHeight = windowWidth * 0.625
-
-    return {
-      windowWidth: windowWidth - 10,
-      windowHeight: windowHeight
-    };
+const calculateDimensions = () => {
+  let windowWidth;
+  if (window.innerWidth > 768) {
+    windowWidth = window.innerWidth * 0.625;
+  } else {
+    windowWidth = window.innerWidth * 10/12;
   }
+  let windowHeight = windowWidth * 0.625
 
+  return {
+    windowWidth: windowWidth - 10,
+    windowHeight: windowHeight
+  };
+}
 
 export default Workflow;

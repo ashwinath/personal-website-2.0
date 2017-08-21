@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class NotFound extends Component {
-  render() {
-    return (
-      <div id="landing" 
-        className="col-md-9 main-section center-vertical-parent">
-        <div id="landing-content" className="center-vertical">
-          <h1>Page Not Found</h1>
-        </div>
-      </div>
-    );
-  }
-}
+const NotFound = () => (
+  <div id="landing" 
+    className="col-md-9 main-section center-vertical-parent">
+    <div id="landing-content" className="center-vertical">
+      <h1>Page Not Found</h1>
+    </div>
+  </div>
+);
 
 export default NotFound;

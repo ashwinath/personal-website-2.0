@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import SubPage from '../Components/SubPage';
 import isEmail from 'validator/lib/isEmail';
 import isNumeric from 'validator/lib/isNumeric';
+import * as contactStates from '../States/contactStates';
+import * as constants from '../States/constants';
 import axios from 'axios';
-
-const FAILED = 'failed';
-const SUCCESS = 'success';
 
 class Contact extends Component {
   constructor(props) {
@@ -23,15 +22,10 @@ class Contact extends Component {
       requestSent: false,
       submitPressed: false,
       submitStatus: 'not sent',
-    }
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.checkErrors = this.checkErrors.bind(this);
+    };
   }
 
-  checkErrors() {
-    return this.state.name 
+  checkErrors = () => this.state.name 
       && this.state.email 
       && this.state.content 
       && this.state.nameValid
@@ -39,66 +33,40 @@ class Contact extends Component {
       && this.state.phoneValid
       && this.state.contentValid
       ? true : false;
-  }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     // Final check, in case the user did not touch the keys
     let valid = this.checkErrors();
 
     if (valid) {
+      this.setState(contactStates.loadingState(this.state));
 
-      this.setState(() => {
-        let newState = this.state;
-        newState.requestSent = true;
-        return newState;
-      });
+      const {
+        name,
+        email,
+        phone,
+        content
+      } = this.state;
 
       axios.post('/Contact', {
         contactEnvelope: {
-          name: this.state.name,
-          email: this.state.email,
-          phone: this.state.phone,
-          message: this.state.content
+          name: name,
+          email: email,
+          phone: phone,
+          message: content
         }
-      })
-      .then(response => {
-        let result = response.data.result;
-        let newState = this.state;
-
-        if (result === SUCCESS) {
-          this.setState(() => {
-            newState.submitStatus = SUCCESS;
-            newState.requestSent = false;
-            return newState;
-          });
-        } else {
-          this.setState(() => {
-            newState.submitStatus = FAILED;
-            newState.requestSent = false;
-            return newState;
-          });
-        }
-      })
-      .catch(error => {
-        this.setState(() => {
-          let newState = this.state;
-          newState.submitStatus = FAILED;
-            newState.requestSent = false;
-          return newState;
-        });
-      });
+      }).then(
+        handleResponse(this.setState),
+        handleError(this.setState)
+      );
     } else {
-      this.setState(() => {
-        let newState = this.state;
-        newState.submitPressed = true;
-        return newState;
-      });
+      this.setState(contactStates.submitState(this.state));
     }
   }
 
-  validate(name, value) {
+  validate = (name, value) => {
     if (name === 'email') {
       return isEmail(value)
     } else if (name === 'name' || name === 'content') {
@@ -108,9 +76,7 @@ class Contact extends Component {
     }
   }
 
-  handleChange(event) {
-    const { target } = event;
-
+  handleChange = ({ target }) => {
     // new inputs
     const { name, value } = target;
 
@@ -144,14 +110,14 @@ class Contact extends Component {
           {this.checkErrors()
             && <SuccessMessage/>}
           {this.checkErrors() 
-          && (this.state.submitStatus === FAILED 
-              || this.state.submitStatus === SUCCESS)
+          && (this.state.submitStatus === constants.FAILED 
+              || this.state.submitStatus === constants.SUCCESS)
           && <SubmitStatus 
             submitStatus={this.state.submitStatus}/>}
           <button type="submit" 
             value="submit"
             className="btn btn-lg submit-btn"
-            disabled={this.state.requestSent || this.state.submitStatus === SUCCESS}>
+            disabled={this.state.requestSent || this.state.submitStatus === constants.SUCCESS}>
             Send me a Telegram!</button>
           </form>
       </SubPage>
@@ -159,8 +125,8 @@ class Contact extends Component {
   }
 }
 
-function SubmitStatus(props) {
-  if (props.submitStatus === SUCCESS) {
+const SubmitStatus = ({ submitStatus }) => {
+  if (submitStatus === constants.SUCCESS) {
     return (
       <div className="col-md-12">
         <div className="alert alert-success alerts">
@@ -170,7 +136,7 @@ function SubmitStatus(props) {
         </div>
       </div>
     );
-  } else if (props.submitStatus === FAILED) {
+  } else if (submitStatus === constants.FAILED) {
     return (
       <div className="col-md-12">
         <div className="alert alert-danger alerts">
@@ -183,19 +149,17 @@ function SubmitStatus(props) {
   }
 }
 
-function SuccessMessage() {
-  return (
-    <div className="col-md-12">
-      <div className="alert alert-success alerts">
-        <p id="alert-sign">
-          <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> Your message is ready to go!
-        </p>
-      </div>
+const SuccessMessage = () => (
+  <div className="col-md-12">
+    <div className="alert alert-success alerts">
+      <p id="alert-sign">
+        <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> Your message is ready to go!
+      </p>
     </div>
-  )
-}
+  </div>
+);
 
-function ErrorMessages(props) {
+const ErrorMessages = (props) => {
   const { 
     name,
     nameValid, 
@@ -204,7 +168,8 @@ function ErrorMessages(props) {
     phone,
     phoneValid, 
     content,
-    contentValid } = props.state;
+    contentValid
+  } = props.state;
   return (
     <div className="col-md-12">
       <div className="alert alert-danger alerts">
@@ -220,8 +185,8 @@ function ErrorMessages(props) {
   );
 }
 
-function ContactMessage(props) {
-  let errorDiv = props.state["contentValid"]
+const ContactMessage = ({ state, handleChange }) => {
+  let errorDiv = state["contentValid"]
     ? 'success'
     : 'error';
   return (
@@ -230,8 +195,8 @@ function ContactMessage(props) {
         <textarea
           id="content"
           name="content"
-          value={props.state.content}
-          onChange={props.handleChange}
+          value={state.content}
+          onChange={handleChange}
           className={`form-control ${errorDiv}`}
           placeholder="Message"/>
       </div>
@@ -239,16 +204,16 @@ function ContactMessage(props) {
   );
 }
 
-function capitaliseFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+const capitaliseFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function ContactParticulars(props) {
+const ContactParticulars = ({ handleChange, state }) => {
   const particulars = ["name", "email", "phone"];
   return (
     <div className="col-md-6">
       {particulars.map(attributes => {
-        let errorDiv = props.state[attributes + "Valid"]
+        let errorDiv = state[attributes + "Valid"]
           ? 'success'
           : 'error';
         return (
@@ -257,8 +222,8 @@ function ContactParticulars(props) {
             <input
               id={attributes}
               name={attributes}
-              value={props.state[attributes]}
-              onChange={props.handleChange}
+              value={state[attributes]}
+              onChange={handleChange}
               type="text"
               className={`form-control ${errorDiv}`}
               placeholder={capitaliseFirstLetter(attributes)}
@@ -269,6 +234,22 @@ function ContactParticulars(props) {
     </div>
   );
 
+}
+
+const handleResponse = setState => response => {
+  const result = response.data.result;
+  const newState = this.state;
+
+  if (result === constants.SUCCESS) {
+    setState(contactStates.successState(newState));
+  } else {
+    setState(contactStates.failedState(newState));
+  }
+}
+
+const handleError = setState => err => {
+  const newState = this.state;
+  setState(contactStates.failedState(newState));
 }
 
 export default Contact;
