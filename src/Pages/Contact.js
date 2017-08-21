@@ -38,7 +38,7 @@ class Contact extends Component {
     event.preventDefault();
 
     // Final check, in case the user did not touch the keys
-    let valid = this.checkErrors();
+    const valid = this.checkErrors();
 
     if (valid) {
       this.setState(contactStates.loadingState(this.state));
@@ -58,8 +58,8 @@ class Contact extends Component {
           message: content
         }
       }).then(
-        handleResponse(this.setState),
-        handleError(this.setState)
+        response => this.setState(getResponseState(response, this.state)),
+        err => this.setState(contactStates.failedState(this.state))
       );
     } else {
       this.setState(contactStates.submitState(this.state));
@@ -88,9 +88,7 @@ class Contact extends Component {
     const valid = this.validate(name, value);
     newState[`${name}Valid`] = valid;
 
-    this.setState(() => {
-      return newState;
-    });
+    this.setState(() => newState);
   }
 
   render() {
@@ -233,23 +231,10 @@ const ContactParticulars = ({ handleChange, state }) => {
       })}
     </div>
   );
-
 }
 
-const handleResponse = setState => response => {
-  const result = response.data.result;
-  const newState = this.state;
-
-  if (result === constants.SUCCESS) {
-    setState(contactStates.successState(newState));
-  } else {
-    setState(contactStates.failedState(newState));
-  }
-}
-
-const handleError = setState => err => {
-  const newState = this.state;
-  setState(contactStates.failedState(newState));
-}
+const getResponseState = ({ data }, state) => data.result === constants.SUCCESS ?
+  contactStates.successState(state) :
+  contactStates.failedState(state);
 
 export default Contact;
