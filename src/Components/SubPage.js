@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PageDetails from '../Components/PageDetails';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 class SubPage extends Component {
   render() {
