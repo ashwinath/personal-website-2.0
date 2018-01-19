@@ -3,6 +3,7 @@ import SubPage from '../Components/SubPage'
 import PropTypes from 'prop-types';
 import DXC from '../images/DXC.png';
 import Epikk from '../images/Epikk.png';
+import NinetyNine from '../images/ninety-nine.png'
 
 const Experience = () => (
   <SubPage pageName="Experience">
@@ -14,10 +15,17 @@ const Experience = () => (
 
 const getWorkExperiences = () => [
   {
+    company: "99.co",
+    picture: NinetyNine,
+    title: "Backend Engineer",
+    duration: "Jan 2018 - Present",
+    className: "section-band-dark"
+  },
+  {
     company: "DXC Techology (Formerly HPE)",
     picture: DXC,
     title: "Software Engineer",
-    duration: "July 2016 - Present",
+    duration: "July 2016 - Dec 2017",
     className: ""
   },
   {
@@ -26,7 +34,7 @@ const getWorkExperiences = () => [
     title: "Content Marketer",
     duration: "May 2015 - July 2015",
     className: "section-band-dark"
-  }
+  },
 ];
 
 const WorkExperience = ({ workExperience }) => (

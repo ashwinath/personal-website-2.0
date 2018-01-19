@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Website2 from '../images/Website2.png';
 import Website from '../images/Website.png';
 import PopularMovies from '../images/PopularMovies.png';
-import Operator from '../images/Operator.png';
 
 const Portfolio = () => (
   <SubPage pageName="Portfolio">
@@ -20,12 +19,6 @@ const getProjects = () => [
     title: "This Website",
     github: "https://github.com/ashwinath/personal-website-2.0",
     desc: "Code that powers this site."
-  },
-  {
-    picture: Operator,
-    title: "Operator",
-    github: "https://github.com/ashwinath/operator-rest-server",
-    desc: "Personal Assistant for Singaporeans."
   },
   {
     picture: Website,

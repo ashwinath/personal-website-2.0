@@ -251,6 +251,7 @@ html, body, #root, #router, #side-bar, .main-section {
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+  max-height: 256px;
 }
 
 .portfolio-link img {
