@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Website2 from '../images/Website2.png';
 import Website from '../images/Website.png';
 import PopularMovies from '../images/PopularMovies.png';
+import Scraper from '../images/Scraper.png'
 
 const Portfolio = () => (
   <SubPage pageName="Portfolio">
@@ -25,6 +26,12 @@ const getProjects = () => [
     title: "Previous Website",
     github: "https://github.com/ashwinath/personal-site",
     desc: "My first attempt at web dev."
+  },
+  {
+    picture: Scraper,
+    title: "Job Finder",
+    github: "https://github.com/ashwinath/job-finder",
+    desc: "When you get lazy to look for a job"
   },
   {
     picture: PopularMovies,
