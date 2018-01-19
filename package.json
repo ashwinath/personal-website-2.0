@@ -17,6 +17,9 @@
     "validator": "^8.0.0",
     "winston": "^2.3.1"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "scripts": {
     "serve": "react-scripts start",
     "build": "react-scripts build && cp workflow-webm.webm build/",
