@@ -324,3 +324,9 @@ textarea.form-control {
   padding-top: 20px;
   padding-left: 0;
 }
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}

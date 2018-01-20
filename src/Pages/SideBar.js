@@ -7,7 +7,6 @@ class SideBar extends Component {
     this.state = {
       width: window.innerWidth
     };
-    this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this);
   }
 
   componentWillMount() {
