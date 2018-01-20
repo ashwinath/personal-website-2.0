@@ -18,22 +18,24 @@ const getWorkExperiences = () => [
     company: "99.co",
     picture: NinetyNine,
     title: "Backend Engineer",
+    tools: "Python, Tornado, NGINX",
     duration: "Jan 2018 - Present",
-    className: "section-band-dark"
+    className: "section-band-dark",
   },
   {
-    company: "DXC Techology (Formerly HPE)",
+    company: "DXC Technology",
     picture: DXC,
     title: "Software Engineer",
+    tools: "Java, Spring, Hibernate, Axis2, Spring Batch, Quartz Scheduler, Oracle DB",
     duration: "July 2016 - Dec 2017",
-    className: ""
+    className: "",
   },
   {
     company: "Epikk Co",
     picture: Epikk,
     title: "Content Marketer",
     duration: "May 2015 - July 2015",
-    className: "section-band-dark"
+    className: "section-band-dark",
   },
 ];
 
@@ -73,10 +75,11 @@ class WorkExperience extends Component {
             alt={workExperience.company}
             className="img-thumbnail work-img"/>
         </div>
-        <div className={`col-md-9 ${verticalAlign}`}>
+        <div className={`col-md-6 ${verticalAlign}`}>
           <div className="work-exp-desc">
             <p className="work-company">{workExperience.company}</p>
             <p className="work-title">{workExperience.title}</p>
+            {workExperience.tools ? <p className="work-tools">{workExperience.tools}</p> : ""}
             <p className="work-duration">{workExperience.duration}</p>
           </div>
         </div>
